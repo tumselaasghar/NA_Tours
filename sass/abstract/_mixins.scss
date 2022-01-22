@@ -1,0 +1,48 @@
+@mixin clearfix {
+    &::after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+// @mixin phone-respond {
+//     @media (max-width: 600px) {
+//         @content
+//     }
+//     ;
+// }
+//37.5em
+//600px
+@mixin respond($breakpoint) {
+    @if $breakpoint==phone {
+        @media (max-width: 37.5em) {
+            @content
+        }
+        ;
+    }
+    //56.25em
+    //900/16
+    @if $breakpoint==tablet-port {
+        @media (max-width: 56.25em) {
+            @content
+        }
+        ;
+    }
+    //75em
+    //1200px
+    @if $breakpoint==tablet-landscape {
+        @media (max-width: 75em) {
+            @content
+        }
+        ;
+    }
+    //112.5em
+    //1800px
+    @if $breakpoint==big-desktop {
+        @media (min-width: 112.5em) {
+            @content
+        }
+        ;
+    }
+}

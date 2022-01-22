@@ -1,0 +1,82 @@
+.btn {
+    &:link,
+    &:visited,
+    & {
+        text-transform: uppercase;
+        border: none;
+        text-decoration: none;
+        padding: 1.5rem 4rem;
+        cursor: pointer;
+        display: inline-block;
+        border-radius: 10rem;
+        position: relative;
+        transition: all .2s;
+        // background-color: $color-white;
+        font-size: 1.6rem;
+    }
+    &:hover {
+        transform: translateY(-.3px);
+        box-shadow: 0 10px 20px rgba($color-black, 0.2);
+        &:hover::after {
+            transform: scale(1.4) scaleY(1.0);
+            opacity: 0;
+        }
+    }
+    &-white {
+        background-color: $color-white;
+        color: $color-gary-dark;
+        &::after {
+            background-color: $color-white;
+        }
+    }
+    &-green {
+        background-color: $color-primary-dark;
+        color: $color-white;
+        &::after {
+            background-color: $color-primary-dark;
+        }
+    }
+    &-animated {
+        animation: moveInBottom .5s ease-out .75s;
+        animation-fill-mode: backwards;
+    }
+    &:active {
+        transform: translateY(-1px);
+        box-shadow: 0 50px 10px rgba($color-black, 0.2);
+    }
+    &::after {
+        content: '';
+        display: inline-block;
+        height: 100%;
+        width: 100%;
+        border-radius: 10rem;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transition: all .4s;
+    }
+}
+
+.btn-text {
+    &:link,
+    &:visited {
+        font-size: 1.6rem;
+        color: $color-primary-dark;
+        display: inline-block;
+        text-decoration: none;
+        border-bottom: 1px solid $color-primary-dark;
+        padding: 3px;
+        transition: all .2s;
+    }
+    &:hover {
+        background-color: $color-primary-dark;
+        color: $color-white;
+        box-shadow: 0 1rem 2rem rgba($color-black, .15);
+        transform: translateY(-2px);
+    }
+    &:active {
+        box-shadow: 0 .5rem 1rem rgba($color-black, .15);
+        transform: translateY(0);
+    }
+}
